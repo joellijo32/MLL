@@ -1,4 +1,21 @@
-## Lab Cycle 
+# Machine Learning Lab (PCCSL508)
+
+KTU syllabus lab implementations for `PCCSL508 - Machine Learning Lab`.
+
+## Usage
+
+```bash
+git clone <repo-url>
+cd MLL
+python -m venv venv
+source venv/bin/activate      # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+python 01.py   # replace with any lab number (01–20)
+```
+
+---
+
+## Lab Cycle
 From the official KTU syllabus of `PCCSL508 - Machine Learning Lab`
 
 1. Implement linear regression with one variable on the California Housing dataset to predict
