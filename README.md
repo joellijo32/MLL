@@ -10,7 +10,7 @@ cd MLL
 python -m venv venv
 source venv/bin/activate      # Windows: venv\Scripts\activate
 pip install -r requirements.txt
-python 01.py   # replace with any lab number (01–20)
+python 01.py   # replace 01 with any question number (01–20)
 ```
 
 ---
