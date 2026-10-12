@@ -47,10 +47,10 @@ y_pred_log = log_model.predict(X_test)
 
 print("Logistic Regression")
 
-print(f"Accuracy: {accuracy_score(y_test, y_pred_log)}")
-print(f"Precision: {precision_score(y_test, y_pred_log, pos_label=">50K")}")
-print(f"Recall: {recall_score(y_test, y_pred_log, pos_label=">50K")}")
-print(f"F1 Score: {f1_score(y_test, y_pred_log, pos_label=">50K")}")
+print(f'Accuracy: {accuracy_score(y_test, y_pred_log)}')
+print(f'Precision: {precision_score(y_test, y_pred_log, pos_label=">50K")}')
+print(f'Recall: {recall_score(y_test, y_pred_log, pos_label=">50K")}')
+print(f'F1 Score: {f1_score(y_test, y_pred_log, pos_label=">50K")}')
 
 
 tree = DecisionTreeClassifier(criterion="entropy", random_state=42)
@@ -61,7 +61,7 @@ y_pred_tree = tree.predict(X_test)
 
 print("\nDecision Tree")
 
-print(f"Accuracy: {accuracy_score(y_test, y_pred_tree)}")
-print(f"Precision: {precision_score(y_test, y_pred_tree, pos_label=">50K")}")
-print(f"Recall: {recall_score(y_test, y_pred_tree, pos_label=">50K")}")
-print(f"F1 Score: {f1_score(y_test, y_pred_tree, pos_label=">50K")}")
+print(f'Accuracy: {accuracy_score(y_test, y_pred_tree)}')
+print(f'Precision: {precision_score(y_test, y_pred_tree, pos_label=">50K")}')
+print(f'Recall: {recall_score(y_test, y_pred_tree, pos_label=">50K")}')
+print(f'F1 Score: {f1_score(y_test, y_pred_tree, pos_label=">50K")}')
