@@ -38,7 +38,7 @@ fig, axes = plt.subplots(nrows=2, ncols=3, figsize=(15,8))
 axes = axes.flatten()
 
 for i in range(6):
-  axes[i].scatter(X_reduced[:,0], X_reduced[:,1], c=labs[i], cmap="inferno", alpha=0.5, s=15)
+  axes[i].scatter(X_reduced[:,0], X_reduced[:,1], c=labs[i], cmap="viridis", alpha=0.5, s=15)
   axes[i].set_title(f"K={ks[i]}")
 plt.tight_layout()
 plt.show()
