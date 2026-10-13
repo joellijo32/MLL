@@ -31,7 +31,7 @@ plt.figure(figsize=(12, 5))
 
 plt.subplot(1,2,1)
 
-plt.scatter(X.iloc[:,0], X.iloc[:,1], c=kmeans_labels, alpha=0.5,cmap="inferno")
+plt.scatter(X.iloc[:,0], X.iloc[:,1], c=kmeans_labels, alpha=0.5,cmap="viridis")
 
 plt.title("K Means")
 
@@ -40,7 +40,7 @@ plt.ylabel("Spending Score")
 
 
 plt.subplot(1,2,2)
-plt.scatter(X.iloc[:,0], X.iloc[:,1], c=agg_labels, alpha=0.5, cmap="magma")
+plt.scatter(X.iloc[:,0], X.iloc[:,1], c=agg_labels, alpha=0.5, cmap="plasma")
 
 
 plt.title("Agglomerative (Hierarchical)")
