@@ -9,20 +9,17 @@ vectorizer = CountVectorizer(
     stop_words="english",
     max_features=1000
 )
-
 X = vectorizer.fit_transform(texts)
 vocabulary = vectorizer.get_feature_names_out()
 word_counts = np.asarray(X.sum(axis=0)).flatten()
 N = word_counts.sum()
 V = len(vocabulary)
-
 print(f"Vocabulary size: {V}")
 print(f"Total words: {N}")
 
 mle = word_counts / N
 alphas = [1, 2, 5, 10]
 map_results = {}
-
 for alpha in alphas:
     # Symmetric Dirichlet(alpha) prior
     map_estimate = (
@@ -43,7 +40,7 @@ print("-" * 70)
 header = f"{'Word':<15}{'MLE':<12}"
 
 for alpha in alphas:
-    header += f"MAP α={alpha:<8}"
+    header += f"MAP a={alpha:<8}"
 print(header)
 
 for word in compare_words:
@@ -65,7 +62,7 @@ print_top_words(mle, "Top 10 Words - MLE")
 for alpha in alphas:
     print_top_words(
         map_results[alpha],
-        f"Top 10 Words - MAP (α={alpha})"
+        f"Top 10 Words - MAP (a={alpha})"
     )
 
 plot_words = [
@@ -80,7 +77,7 @@ plot_data = {
 }
 
 for alpha in alphas:
-    plot_data[f"MAP α={alpha}"] = [
+    plot_data[f"MAP a={alpha}"] = [
         map_results[alpha][np.where(vocabulary == word)[0][0]]
         for word in plot_words
     ]
