@@ -7,14 +7,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 df= pd.read_csv('Datasets/housing.csv')
-
 X = df[["AveRooms"]][:1000]
 y = df["MedHouseVal"][:1000]
 
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
 )
-
 scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
@@ -23,7 +21,6 @@ X_test_scaled = scaler.transform(X_test)
 model_sgd = SGDRegressor(max_iter=1000, learning_rate="constant", eta0=0.01, penalty=None, random_state=42)
 model_sgd.fit(X_train_scaled, y_train)
 y_pred_sgd = model_sgd.predict(X_test_scaled)
-
 mse_sgd = mean_squared_error(y_test, y_pred_sgd)
 r2_sgd = r2_score(y_test, y_pred_sgd)
 
@@ -37,7 +34,6 @@ print("R Squared (R²):", r2_sgd)
 model_lr = LinearRegression()
 model_lr.fit(X_train_scaled, y_train)
 y_pred_lr = model_lr.predict(X_test_scaled)
-
 mse_lr = mean_squared_error(y_test, y_pred_lr)
 r2_lr = r2_score(y_test, y_pred_lr)
 
@@ -46,7 +42,6 @@ print("Intercept:", model_lr.intercept_)
 print("Coefficient:", model_lr.coef_[0])
 print("Mean Squared Error:", mse_lr)
 print("R Squared (R²):", r2_lr)
-
 X_test_sorted = np.array(X_test['AveRooms'])
 sort_idx = X_test_sorted.argsort()
 
@@ -54,7 +49,6 @@ plt.figure(figsize=(10, 5))
 plt.scatter(X_test_sorted, y_test, alpha=0.4, s=50, color="red", label="Actual Test Data")
 plt.plot(X_test_sorted[sort_idx], y_pred_sgd[sort_idx], linewidth=3, color="green", linestyle="--", label="SGD Prediction")
 plt.plot(X_test_sorted[sort_idx], y_pred_lr[sort_idx], linewidth=1.5, color="blue", label="Normal Equation Prediction")
-
 plt.xlabel("Average Rooms (AveRooms)")
 plt.ylabel("Median House Value (MedHouseVal)")
 plt.title("Model Comparison: SGD vs Normal Equation")
