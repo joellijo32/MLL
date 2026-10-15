@@ -41,7 +41,7 @@ print("\nNormal Equation\n")
 print("Intercept:", model_lr.intercept_)
 print("Coefficient:", model_lr.coef_[0])
 print("Mean Squared Error:", mse_lr)
-print("R Squared (R²):", r2_lr)
+print("R Squared:", r2_lr)
 X_test_sorted = np.array(X_test['AveRooms'])
 sort_idx = X_test_sorted.argsort()
 
