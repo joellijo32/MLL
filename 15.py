@@ -24,7 +24,7 @@ for lr, batch, epochs in experiments:
     y_pred = model.predict(X_test)
     print(f"\nLearning Rate = {lr}")
     print(f"Batch Size = {batch}")
-    print(f"Epochs = {epochs}")\
+    print(f"Epochs = {epochs}")
     print(f"Training Time = {end-start:.2f} seconds")
     print(f"Accuracy = {accuracy_score(y_test, y_pred):.4f}")
     print(f"Precision = {precision_score(y_test, y_pred, average='weighted', zero_division=0):.4f}")
