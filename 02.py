@@ -10,7 +10,7 @@ df = pd.read_csv("Datasets/autompg.csv")
 df = df[['displacement', 'class']]
 X = df[['displacement']].values 
 y = df[['class']].values 
-X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Linear regression
 linearModel = LinearRegression()
