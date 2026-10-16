@@ -19,7 +19,7 @@ y_pred_multi = multi.predict(X_test_multi)
 
 print("Multinomial Naive Bayes")
 print(f"Accuracy: {accuracy_score(y_test, y_pred_multi)}")
-print(f"F1 Score: {f1_score(y_test, y_pred_multi, average="weighted")}")
+print(f"F1 Score: {f1_score(y_test, y_pred_multi, average='weighted')}")
 
 vectorizer_binary = CountVectorizer(stop_words="english", max_features=5000, binary=True)
 X_train_binary = vectorizer_binary.fit_transform(X_train)
@@ -31,4 +31,4 @@ y_pred_binary = bernoulli.predict(X_test_binary)
 
 print("\nBernoulli Naive Bayes")
 print(f"Accuracy: {accuracy_score(y_test, y_pred_binary)}")
-print(f"F1 Score: {f1_score(y_test, y_pred_binary, average="weighted")}")
+print(f"F1 Score: {f1_score(y_test, y_pred_binary, average='weighted')}")

@@ -8,7 +8,7 @@ from sklearn.metrics import accuracy_score
 
 df = pd.read_csv("Datasets/iris.csv")
 X = df[["petal length (cm)", "petal width (cm)"]].values
-y = df["target"].values
+y = (df["target"].values == 0).astype(int) # binary: Setosa (1) vs Non-Setosa (0)
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42, test_size=0.2)
 scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)

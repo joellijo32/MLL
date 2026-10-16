@@ -28,7 +28,7 @@ print("\nGradient Descent (SGD)\n")
 print("Intercept:", model_sgd.intercept_[0])
 print("Coefficient:", model_sgd.coef_[0])
 print("Mean Squared Error:", mse_sgd)
-print("R Squared (R²):", r2_sgd)
+print("R Squared (R2):", r2_sgd)
 
 # --- 2. Normal Equation ---
 model_lr = LinearRegression()
