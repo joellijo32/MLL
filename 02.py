@@ -53,7 +53,7 @@ for degree, color in zip(degrees, colors):
     plt.plot(x_plot, y_curve, color=color, label=f"Degree {degree}")
 plt.xlabel("Engine Displacement")
 plt.ylabel("Miles per Gallon")
-plt.title("Polynomial v. Linear Regression")
+plt.title("Polynomial vs Linear Regression")
 plt.legend() 
 plt.grid(True, alpha=0.6) 
 plt.show() 
