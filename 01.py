@@ -42,7 +42,7 @@ print("Intercept:", model_lr.intercept_)
 print("Coefficient:", model_lr.coef_[0])
 print("Mean Squared Error:", mse_lr)
 print("R Squared:", r2_lr)
-X_test_sorted = np.array(X_test['AveRooms'])
+X_test_sorted = np.array(X_test_scaled['AveRooms'])
 sort_idx = X_test_sorted.argsort()
 
 plt.figure(figsize=(10, 5))
